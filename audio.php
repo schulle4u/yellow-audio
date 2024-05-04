@@ -64,8 +64,12 @@ class YellowAudio {
             if ($download) $output .= "<p><a href=\"".htmlspecialchars($url)."\">Download</a></p>";
             $output .= "</div>";
         }
-        if ($name=="audiocontrols" && ($type=="block" || $type=="inline")) {
-            $output = "<div id=\"playerControls\" role=\"region\" aria-label=\"".htmlspecialchars(ucfirst($name))."\">\n";
+        if ($name=="audiolist" && $type=="notice") {
+            $htmlAttributes = $this->yellow->lookup->getHtmlAttributes($attributes);
+            $output = "<div$htmlAttributes id=\"audiolist\">\n";
+            $output .= "$text\n";
+            $output .= "</div>\n";
+            $output .= "<div id=\"playerControls\" role=\"region\" aria-label=\"".htmlspecialchars(ucfirst($name))."\">\n";
             $output .= "<p aria-live=\"polite\"><button id=\"playPauseButton\" data-playLabel=\"".$this->yellow->language->getTextHtml("audioPlayButton")."\" data-pauseLabel=\"".$this->yellow->language->getTextHtml("audioPauseButton")."\">".$this->yellow->language->getTextHtml("audioPlayButton")."</button> <button id=\"stopButton\">".$this->yellow->language->getTextHtml("audioStopButton")."</button> <button id=\"rewindButton\">".$this->yellow->language->getTextHtml("audioRewindButton")."</button> <button id=\"forwardButton\">".$this->yellow->language->getTextHtml("audioForwardButton")."</button></p>\n";
             $output .= "<p><label id=\"volumeSlider\" for=\"volumeControl\">".$this->yellow->language->getTextHtml("audioVolume")."</label>";
             $output .= "<input type=\"range\" id=\"volumeControl\" min=\"0\" max=\"1\" step=\"0.1\" value=\"1\" aria-labelledby=\"volumeSlider\">&nbsp;";

@@ -22,7 +22,7 @@ The following arguments are available, all but the first argument are optional:
 
 ## How to use audio links
 
-Create a notice block using an `audiolist` ID. Every link inside the block will be treated as audio link. To activate the playback controls, create a `[audiocontrols]` shortcut somewhere in your page. 
+Create a notice block using an `audiolist` class. Every link inside the block will be treated as audio link, and basic playback controls are available. 
 
 ## Examples
 
@@ -46,13 +46,11 @@ Title: Audio page
 ---
 Here is a list of audio files, just click on any of the links to play them. To download a file, right-click and save as. 
 
-! {#audiolist}
+! {.audiolist}
 ! * [File 1](/media/downloads/file1.mp3)
 ! * [File 2](/media/downloads/file2.mp3)
 ! * [External file](http://wolke.robbenradio.de/podcasts/rt033_yellow.mp3)
 ! * [Radio Stream](https://stream.powerradio4u.de:8000/p4u.mp3)
-
-[audiocontrols]
 ~~~
 
 ## Settings

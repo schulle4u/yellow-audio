@@ -22,7 +22,7 @@ Die folgenden Argumente sind verfügbar, mit Ausnahme des ersten Arguments sind 
 
 ## Wie man Audiolinks verwendet
 
-Erstelle einen Notizblock mit der ID `audiolist`. Jeder Link darin wird als Audiolink behandelt. Um die Player-Steuerelemente einzublenden, erstelle eine `[audiocontrols]`-Abkürzung auf deiner Seite. 
+Erstelle einen Notizblock mit der Klasse `audiolist`. Jeder Link darin wird als Audiolink behandelt, und allgemeine Player-Steuerelemente sind verfügbar. 
 
 ## Beispiele
 
@@ -46,13 +46,11 @@ Title: Audioseite
 ---
 Hier ist eine Liste von Audiodateien. Klicke einfach auf einen der Links um sie abzuspielen. Zum Speichern einer Datei verwende einen Rechtsklick und wähle "Speichern unter". 
 
-! {#audiolist}
+! {.audiolist}
 ! * [Datei 1](/media/downloads/datei1.mp3)
 ! * [Datei 2](/media/downloads/datei2.mp3)
 ! * [Externe Datei](http://wolke.robbenradio.de/podcasts/rt033_yellow.mp3)
 ! * [Radio-Stream](https://stream.powerradio4u.de:8000/p4u.mp3)
-
-[audiocontrols]
 ~~~
 
 ## Einstellungen
