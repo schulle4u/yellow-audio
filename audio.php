@@ -66,17 +66,12 @@ class YellowAudio {
         }
         if ($name=="audiolist" && $type=="notice") {
             $htmlAttributes = $this->yellow->lookup->getHtmlAttributes($attributes);
-            $output = "<div$htmlAttributes id=\"audiolist\">\n";
+            $output = "<div$htmlAttributes  role=\"region\" aria-label=\"".htmlspecialchars(ucfirst($name))."\" aria-live=\"polite\">\n";
             $output .= "$text\n";
+            $output .= "<p><button data-role=\"playPauseButton\" data-playLabel=\"".$this->yellow->language->getTextHtml("audioPlayButton")."\" data-pauseLabel=\"".$this->yellow->language->getTextHtml("audioPauseButton")."\">".$this->yellow->language->getTextHtml("audioPlayButton")."</button> <button data-role=\"stopButton\">".$this->yellow->language->getTextHtml("audioStopButton")."</button> <button data-role=\"rewindButton\">".$this->yellow->language->getTextHtml("audioRewindButton")."</button> <button data-role=\"forwardButton\">".$this->yellow->language->getTextHtml("audioForwardButton")."</button><br />\n";
+            $output .= "<label>".$this->yellow->language->getTextHtml("audioVolume")." <input type=\"range\" id=\"volumeControl\" data-role=\"volumeControl\" min=\"0\" max=\"1\" step=\"0.1\" value=\"1\"></label>";
+            $output .= "<label>".$this->yellow->language->getTextHtml("audioSpeed")." <input type=\"range\" id=\"speedControl\" data-role=\"speedControl\" min=\"0.5\" max=\"2\" step=\"0.1\" value=\"1\"></label>\n</p>";
             $output .= "</div>\n";
-            $output .= "<div id=\"playerControls\" role=\"region\" aria-label=\"".htmlspecialchars(ucfirst($name))."\">\n";
-            $output .= "<p aria-live=\"polite\"><button id=\"playPauseButton\" data-playLabel=\"".$this->yellow->language->getTextHtml("audioPlayButton")."\" data-pauseLabel=\"".$this->yellow->language->getTextHtml("audioPauseButton")."\">".$this->yellow->language->getTextHtml("audioPlayButton")."</button> <button id=\"stopButton\">".$this->yellow->language->getTextHtml("audioStopButton")."</button> <button id=\"rewindButton\">".$this->yellow->language->getTextHtml("audioRewindButton")."</button> <button id=\"forwardButton\">".$this->yellow->language->getTextHtml("audioForwardButton")."</button></p>\n";
-            $output .= "<p><label id=\"volumeSlider\" for=\"volumeControl\">".$this->yellow->language->getTextHtml("audioVolume")."</label>";
-            $output .= "<input type=\"range\" id=\"volumeControl\" min=\"0\" max=\"1\" step=\"0.1\" value=\"1\" aria-labelledby=\"volumeSlider\">&nbsp;";
-            $output .= "<label id=\"speedSlider\" for=\"speedControl\">".$this->yellow->language->getTextHtml("audioSpeed")."</label>";
-            $output .= "<input type=\"range\" id=\"speedControl\" min=\"0.5\" max=\"2\" step=\"0.1\" value=\"1\" aria-labelledby=\"speedSlider\">\n</p>";
-            $output .= "</div>\n";
-            $output .= "<audio id=\"audioPlayer\" preload=\"none\"></audio>\n";
         }
         return $output;
     }
