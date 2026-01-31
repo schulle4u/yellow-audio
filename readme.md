@@ -1,8 +1,6 @@
-<p align="right"><a href="readme-de.md">Deutsch</a> &nbsp; <a href="readme.md">English</a></p>
-
 # Audio 0.9.1
 
-HTML5 audio player.
+HTML5 audio player. Developed by Steffen Schultz
 
 <p align="center"><img src="screenshot.png" alt="Screenshot"></p>
 
@@ -65,6 +63,4 @@ The following settings can be configured in file `system/extensions/yellow-syste
 
 Thanks to the Datenstrom Yellow community for help and feedback!
 
-## Developer
-
-Steffen Schultz. [Get help](https://datenstrom.se/yellow/help/).
+Do you have questions? [Get help](https://datenstrom.se/yellow/help/).
